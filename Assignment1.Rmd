@@ -1,0 +1,82 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Congruential Random Number Generator
+
+Write R code to generate $N = 1000$ pseudo-random numbers using a congruential random number generator.
+Choose reasonable values for the multiplier, increment, and modulo. Use your student ID as a seed.
+
+
+
+
+## Inversion sampler for the Pareto distribution
+
+(a) inverse CDF of the Pareto distribution is
+
+$$
+F^{-1}(u) = \frac{a}{(1-u)^{\frac{1}{b}}}\quad 0\leq u < 1
+$$
+(b) Write R code for an inversion sampler to generate a sample of $N = 1000$ random numbers from the Pareto distribution with $a = 2$ and $b = 3$. Use the generated CNRG pseudo-random numbers of Question 1.
+
+
+(c) Draw a histogram for the generated sample and add a line with the true density of the `Pareto(2, 3)` distribution.
+
+```{r}
+hist(x)
+```
+
+## Inversion sampler for a discrete random variable
+
+(a) Write R code for an inversion sampler to generate a sample of 1000 random numbers from the distribution of X
+
+
+(b) Show the probability mass function of the sample of simulated random numbers. Include the true probability mass function in the plot for a comparison.
+
+```{r}
+barplot(rbind(table(x) / m, mass), beside=TRUE)
+```
+
+## Inversion sampler for the binomial distribution
+
+(a) Write R code for an inversion sampler to generate a sample of 1000 random numbers from a binomial distribution with $n = 12$ Bernoulli trials and the probability of success on each trial of $p = 0.8$.
+
+
+
+
+(b) Show the probability mass function of the sample of simulated binomial random numbers. Include the true binomial probability mass function in the plot for a comparison.
+
+```{r}
+barplot(rbind(smass/m, mass), beside=TRUE)
+```
+
+## Rolling dice
+
+(a) Generate a sample of $N = 1000$ totals of rolling the three dice, using an inversion sampler
+
+
+
+
+(b) Show the probability mass function of the sample of simulated totals.
+
+```{r}
+barplot(smass/N)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
